@@ -5,4 +5,6 @@
 #ifndef MTL_MTL_H
 #define MTL_MTL_H
 
+void *mtl_CreateSystemDefaultDevice();
+
 #endif //MTL_MTL_H
