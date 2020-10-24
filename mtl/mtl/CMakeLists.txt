@@ -3,4 +3,4 @@ project(mtl C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_library(mtl mtl.m mtl.h)
+add_library(mtl mtl.m mtl.h device.m device.h)

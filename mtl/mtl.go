@@ -9,12 +9,16 @@ import (
 	"unsafe"
 )
 
+type Handle unsafe.Pointer
+
 // CreateSystemDefaultDevice Returns a reference to the preferred default Metal device object.
-func CreateSystemDefaultDevice() (unsafe.Pointer, error) {
+func CreateSystemDefaultDevice() (Device, error) {
 	d := C.mtl_CreateSystemDefaultDevice()
 	if d == nil {
-		return nil, errors.New("CreateSystemDefaultDevice failed")
+		return Device{}, errors.New("CreateSystemDefaultDevice failed")
 	}
 
-	return d, nil
+	return Device{
+		Handle: DeviceHandle(d),
+	}, nil
 }
