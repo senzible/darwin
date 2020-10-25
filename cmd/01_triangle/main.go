@@ -16,7 +16,6 @@ func main() {
 		log.Fatal(err)
 	}
 	defer td.Release()
-	log.Printf("TextureDescriptor created: %p\n", td.Handle)
 
 	td.SetUsage(mtl.TextureUsageRenderTarget)
 
@@ -25,5 +24,4 @@ func main() {
 		log.Fatal(err)
 	}
 	defer t.Release()
-	log.Printf("Texture created: %p\n", t.Handle)
 }
