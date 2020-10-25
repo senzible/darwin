@@ -11,6 +11,6 @@ import (
 
 type Handle unsafe.Pointer
 
-func Free(handle Handle){
+func Free(handle Handle) {
 	C.free(unsafe.Pointer(handle))
 }
