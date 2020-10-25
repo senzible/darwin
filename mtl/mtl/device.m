@@ -10,5 +10,10 @@ const char *mtl_Device_Name(void *device) {
 }
 
 signed char mtl_Device_SupportsFamily(void *device, unsigned short gpuFamily) {
-    return [(id <MTLDevice>) device supportsFamily:gpuFamily];
+    return [(id <MTLDevice>) device supportsFamily:(MTLGPUFamily) gpuFamily];
 }
+
+void *mtl_Device_NewTextureWithDescriptor(void *device, void *descriptor) {
+    return [(id <MTLDevice>) device newTextureWithDescriptor:descriptor];
+}
+
